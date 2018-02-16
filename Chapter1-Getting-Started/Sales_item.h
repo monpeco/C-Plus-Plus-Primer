@@ -7,6 +7,12 @@ class Sales_item {
   }
   
   friend std::istream& operator>> (std::istream& o,Sales_item& obj){
+    std::cout << "operator>>" << std::endl;
     return o; 
+  }
+  
+  friend std::ostream& operator<< (std::ostream& o,const Sales_item& obj){
+    std::cout << "operator<<" << std::endl;
+    return o;
   }
 };

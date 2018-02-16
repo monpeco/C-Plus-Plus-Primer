@@ -7,7 +7,7 @@ int main(){
   
   std::cin >> book;
   
-  //std::cout << book << std::endl;
+  std::cout << book << std::endl;
   
   return 0;
 }
