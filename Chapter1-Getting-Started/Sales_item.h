@@ -15,4 +15,15 @@ class Sales_item {
     std::cout << "operator<<" << std::endl;
     return o;
   }
+  
+  // stub implementation
+  friend Sales_item& operator+= (Sales_item& o,const Sales_item& obj){
+    std::cout << "operator+=" << std::endl;
+    return o;
+  }
+  
+  // stub implementation
+  int isbn(){
+    return 0;
+  }
 };
