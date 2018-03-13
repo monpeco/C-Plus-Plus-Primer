@@ -18,6 +18,14 @@ int main(){
   std::cout << "p1: " << p1 << '\n';
   std::cout << "*p1: " << *p1 << '\n';
 
+
+  // A second way to define a type alias, via an alias declaration
+  using days = int;
+  
+  days jan = 30;
+  std::cout << "jan: " << jan << '\n';
+
+  
   return 0;
 }
 
