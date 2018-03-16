@@ -31,5 +31,22 @@ int main(){
             <<  ", units_sold: " << s2.units_sold 
             <<  ", revenue: " << s2.revenue << std::endl;
 
-  return 0;
+  if(s1.bookNo == s2.bookNo){
+    unsigned total_count = s1.units_sold + s2.units_sold;
+    double total_revenue = s1.revenue + s2.revenue;
+    
+    std::cout << s1.bookNo << " " << total_count << " " << total_revenue << std::endl;
+    
+    if(total_count != 0){
+      std::cout << "total_revenue / total_count: " << total_revenue / total_count << std::endl;
+    }else{
+      std::cout << "(no sales)" << std::endl;
+    }
+    
+    return 0;
+    
+  }else{
+    std::cout << "Data must refer to same ISBN" << std::endl;
+    return -1;
+  }
 }
