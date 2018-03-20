@@ -17,5 +17,12 @@ int main(){
             << s1.units_sold << " "
             << s1.revenue << std::endl;
   
+  Sales_data2 s2;
+  s2.amount = 10;
+  s2.total = 100.46;
+  
+  std::cout << s2.amount << " "
+            << s2.total << std::endl;
+            
   return 0;
 }
