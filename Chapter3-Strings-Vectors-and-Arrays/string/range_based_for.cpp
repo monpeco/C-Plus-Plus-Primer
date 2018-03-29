@@ -19,5 +19,15 @@ int main(){
   
   std::cout << punct_cnt << " punctuation characters in " << s << std::endl;
   
+  
+  // Change to upper case a string. We must use a reference variable in the for loop
+  std::string w("Hello World!!!");
+  
+  for(auto &c : w)
+    c = toupper(c);
+    
+  std::cout << w << std::endl;
+  
+  
   return 0;
 }
