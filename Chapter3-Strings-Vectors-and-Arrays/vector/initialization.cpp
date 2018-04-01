@@ -38,5 +38,17 @@ int main(){
   vector<int> v40{10, 1}; // v4 has two elements with values 10 and 1
 
 
+  // if we use braces and there is no way to use the initializers to list initialize the object, then those values will be used to construct the object
+  
+  vector<string> v500{"hi"};      // list initialization: v5 has one element
+  
+  //vector<string>  v600("hi");     //  error:  can't  construct a  vector  from  a  string literal
+  
+  vector<string> v700{10};        // v7 has ten default-initialized elements
+  
+  vector<string> v800{10, "hi"};  // v8 has ten elements with value "hi"
+
+
+
   return 0;
 }
