@@ -20,6 +20,19 @@ int main(){
       cout << col << " ";
     cout << endl;
   }
+  
+  // for (auto row : ia)
+    // for (auto col : row)       // Error
+        // cout << col << " ";
+      
+  /*
+  * Because row is not a reference, when the compiler
+  * initializes row it will convert each array element (like any other object of array type)
+  * to a pointer to that array’s first element. As a result, in this loop the type of row is
+  * int*. The inner for loop is illegal. Despite our intentions, that loop attempts to
+  * iterate over an int*.
+  */
+  
   return 0;
 }
 
