@@ -1,5 +1,6 @@
 #include <iostream>
 
+using namespace std;
 
 int main(){
   
@@ -12,6 +13,25 @@ int main(){
   int (*ip2)[4];    // pointer to an array of four ints
 
 
+  /*
+  * With the advent of c++11, we can often avoid having to write the type of a 
+  * pointer into an array by using auto of decltype
+  */
+
+  int count = 10;
+  for(auto p = ia; p != ia + 3; ++p){
+    for(auto q = *p; q != *p + 4; ++q){
+      *q = count;
+      count++;
+    }
+  }
+  
+  for(auto p = ia; p != ia + 3; ++p){
+    for(auto q = *p; q != *p + 4; ++q){
+      cout << *q << ' ';
+    }
+    cout << endl;
+  }
   
   return 0;
 }
