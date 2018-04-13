@@ -33,5 +33,19 @@ int main(){
     cout << endl;
   }
   
+  
+  /*
+  * more easily using begin and end functions
+  */
+  
+  // p points to the first in ia
+  cout << endl;
+  for(auto p1 = begin(ia); p1 != end(ia); ++p1){
+    for(auto q1 = begin(*p1); q1 != end(*p1); ++q1){
+      cout << *q1 << ' ';
+    }
+    cout << endl;
+  }
+  
   return 0;
 }
