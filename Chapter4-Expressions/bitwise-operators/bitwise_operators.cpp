@@ -23,6 +23,14 @@ int main(){
   
   std::cout << "x&y: \t[" << (x&y) << "]" << std::endl;
 
+
+  // Using Bitwise Operators
+  unsigned long quiz1 = 11453246122;
+  std::bitset<32> z(quiz1);
+  std::cout << "\nquiz1: \t[" << z << "]" << std::endl;
+  std::cout << "quiz1: \t[" << (z |= 1UL << 28) << "]" << std::endl;
+
+  quiz1 |= 1UL << 27; // indicate student number 27 passed
   return 0;
 }
 
@@ -40,4 +48,6 @@ y:      [11100011]
 x|y:    [11100111]
 x&y:    [11000010]
 
+quiz1:  [10101010101010101010101010101010]
+quiz1:  [10111010101010101010101010101010]
 */
