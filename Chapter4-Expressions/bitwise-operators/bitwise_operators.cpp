@@ -27,8 +27,11 @@ int main(){
   // Using Bitwise Operators
   unsigned long quiz1 = 11453246122;
   std::bitset<32> z(quiz1);
-  std::cout << "\nquiz1: \t[" << z << "]" << std::endl;
-  std::cout << "quiz1: \t[" << (z |= 1UL << 28) << "]" << std::endl;
+  std::cout << "\nquiz1: \t\t\t[" << z << "]" << std::endl;
+
+  std::cout << "quiz1 |= 1UL << 28) : \t[" << (z |= 1UL << 28) << "]" << std::endl;
+
+  std::cout << "quiz1 &= ~(1UL << 27): \t[" << (z &= ~(1UL << 27)) << "]" << std::endl;
 
   quiz1 |= 1UL << 27; // indicate student number 27 passed
   return 0;
