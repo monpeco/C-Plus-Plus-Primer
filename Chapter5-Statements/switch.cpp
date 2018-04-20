@@ -37,3 +37,19 @@ int main(){
   << "Number of vowel u: \t" << uCnt << endl;  
   
 }
+
+/*
+Output:
+
+a
+e
+r
+f
+b
+Number of vowel a:      1
+Number of vowel e:      1
+Number of vowel i:      0
+Number of vowel o:      0
+Number of vowel u:      0
+
+*/
