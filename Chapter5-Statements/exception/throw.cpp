@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 
 class Sales_item {
   public:
@@ -47,5 +48,16 @@ int main(){
   	std::cerr << "Data must refer to same ISBN" << std::endl;
   	return -1; // indicate failure
   }
+  
+  
+  // In a more realistic program, the part that adds the objects might be separated from
+  // the part that manages the interaction with a user. In this case, we might rewrite the
+  // test to throw an exception rather than returning an error indicator:
+  
+  if (item1.isbn() != item2.isbn())
+    throw std::runtime_error("Data must refer to same ISBN");
+
+  std::cout << item1 + item2 << std::endl;
+  
   return 0;
 }
