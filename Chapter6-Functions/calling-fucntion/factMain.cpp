@@ -10,3 +10,17 @@ int main(){
   return 0;
 }
 
+/*
+g++ -c factMain.cpp
+  factMain.o
+
+g++ -c fact.cpp 
+  fact.o
+
+g++ factMain.o fact.o 
+  a.out*
+
+g++ factMain.o fact.o -o main
+  main*
+
+*/
