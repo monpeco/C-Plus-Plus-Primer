@@ -21,8 +21,11 @@ int main(){
   std::cout << "after reset - v: " << i << std::endl;
 
   // reset(&ci);    // error: invalid conversion from ‘const int*’ to ‘int*’ [-fpermissive]
-                 // error: can't initialize an int* from a pointer to a const int object
+                    // error: can't initialize an int* from a pointer to a const int object
 
+  // reset(42);     // error: can't bind a plain reference to a literal
+  // reset(ctr);    // error: invalid conversion from ‘std::basic_string<char>::size_type {aka long unsigned int}’ to ‘int*’ [-fpermissive]
+                    // error: types don't match; ctr has an unsigned type
 
   return 0;
 }
