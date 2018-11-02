@@ -15,10 +15,14 @@ int main(int argc, char* argv[]){
   const string &psFrist = sFirst;
   const string &psSecond = sSecond;
   
-  lenghtCompare(psFrist, psSecond); // Calling the function through its name
+  lenghtCompare(psFrist, psSecond);   // Calling the function through its name
   
   pf = lenghtCompare;
-  (*pf)(psFrist, psSecond);   // Calling the function through a pointer to function
+  (*pf)(psFrist, psSecond);           // Calling the function through a pointer to function
+  
+  bool b1 = pf("hello","goodbye");              // calls lengthCompare
+  bool b2 = (*pf)("hello","goodbye");           // equivalent call
+  bool b3 = lenghtCompare("hello","goodbye");   // equivalent call
   
   return 0;
 }
