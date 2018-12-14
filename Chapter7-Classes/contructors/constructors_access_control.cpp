@@ -7,6 +7,11 @@ class Sales_data{
     Sales_data() = default;
     Sales_data(const string &s, unsigned n, double p):
       bookNo(s), units_sold(n), revenue(p){};
+    Sales_data(const string &s): bookNo(s){};
+    Sales_data(istream &);
+    
+    string isbn() const { return bookNo; };
+    Sales_data &combine(const Sales_data &s);
       
   private:
     string bookNo;
