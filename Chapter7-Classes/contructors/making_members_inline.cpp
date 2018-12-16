@@ -8,7 +8,7 @@ class Screen{
     typedef string::size_type pos;
     Screen() = default;
     Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c){};
-    char getChar() const
+    char get() const
       { return contents[cursor]; }           // implicitly inline
     inline char get(pos r, pos c) const;   // explicitly inline
     Screen &move(pos r, pos c);
@@ -35,6 +35,8 @@ char Screen::get(pos r, pos c) const{
 
 int main(){
   Screen s;
+  char ch = s.get();    // calls Screen::get()
+  ch = s.get(0,0);      // calls Screen::get(pos, pos)
   
   return 0;
 }
