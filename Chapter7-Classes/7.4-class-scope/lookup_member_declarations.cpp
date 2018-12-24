@@ -16,6 +16,7 @@ class Account{
                                      // the string from the outer scope
     
   private:
+    typedef double Money; // error: cannot redefine Money
     Money bal;
 };
 
