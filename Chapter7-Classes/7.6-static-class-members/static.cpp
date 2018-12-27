@@ -14,6 +14,14 @@ private:
   static double initRate();
 };
 
+void Account::rate(double newRate)
+{
+    interestRate = newRate;
+}
+
+// define and initialize a static class member
+double Account::interestRate = initRate();
+
 int main(){
   double r;
   r = Account::rate();  // access a static memeber using the scope operator
