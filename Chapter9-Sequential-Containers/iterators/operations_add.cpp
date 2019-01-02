@@ -49,5 +49,29 @@ int main(){
   
   c.insert(p,{'e', 'y', 'm', 'l'});           // c.insert(p,il);             //    il is a braced list of elements values. Inserts the given values before the element denoted by the iterator p. Returns an iterator to the first inserted element; if the list is empty returns p.
   
+  list<string> slist(5, "this");
+  slist.insert(slist.begin(), "hello");      // equivalent to calling slist.push_front("Hello")
+  
+  vector<string> svec(5, "this");
+
+  // no push_front on vector, but we can insert before begin()
+  // warning: inserting anywhere but at the end of a vector might be slow
+  svec.insert(svec.begin(), "Hello");
+
+  // The arguments of insert that appear after the initial iterator argument are analogous to the container constructors that take the same parameters.
+  // The version that takes an element count and a value adds the specified number of identical elements before the given position
+  svec.insert(svec.begin(), 10, "Anna");
+  
+
+  // The version that takes a pair of iterators or an initilizer list insert the elements from the given range before the given position:
+  vector<string> v = {"quasi", "simba", "frollo", "scar"};
+  
+  // insert the last two elements of v at the beginning of slist
+  slist.insert(slist.begin(), v.end() - 2, v.end());
+  slist.insert(slist.end(), {"these", "words", "will", "go", "at", "the", "end"});
+  // under the c++11, the version of insert that take a count or a range return an iterator to the first element that was inserted.
+  // (in prior versions of the library, these operations returned void). If the range is empty, no elements are inserted, and the 
+  // operation returns its first parameter.
+    
   return 0;
 }
