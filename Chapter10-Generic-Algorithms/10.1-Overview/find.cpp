@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <list>
 #include <algorithm>
 
 using namespace std;
@@ -17,6 +18,16 @@ int main(){
   cout << "The value " << val
        << (result == vec.cend()
               ? " is not present" : " is present") << endl;
+
+
+  // in a list of strings
+  list<string> lst = {"hello", "world", "a value", "error"};
+  string val2 = "a value";
+  // this call to `find` looks through string elements in a list
+  auto result2 = find(lst.begin(), lst.end(), val2);
+  cout << "The value [" << val2
+       << (result2 == lst.end()
+              ? "] is not present" : "] is present") << endl;
 
   return 0;
 }
