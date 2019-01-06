@@ -29,5 +29,22 @@ int main(){
        << (result2 == lst.end()
               ? "] is not present" : "] is present") << endl;
 
+
+  // similarly, because pointers act like iterators on built-in arrays, we can use `find`
+  int ia[] = {27, 210, 12, 47, 109, 83, 44, 78, 20};
+  val = 83;
+  int* result3 = find(begin(ia), end(ia), val);
+  cout << "The value [" << val
+       << (result3 == end(ia)
+              ? "] is not present" : "] is present") << endl;
+
+  // we can also look in a subrange or the sequence by passing iterators (or pointers)
+  val = 109;
+  int e = 5;
+  auto result4 = find(ia + 1, ia + e, val);
+  cout << "The value [" << val
+       << (result4 == ia + e
+              ? "] is not present in the subrange" : "] is present in the subrange") << endl;
+
   return 0;
 }
