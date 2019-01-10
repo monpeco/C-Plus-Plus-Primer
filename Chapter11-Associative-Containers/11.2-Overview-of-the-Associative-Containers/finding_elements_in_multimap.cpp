@@ -10,11 +10,12 @@ int main(){
   // has multiple elements of a given key, those elements will be adjecent w
   // ithin the container:
 
-  map<string, string> authors = {{"Joyce", "James"}, {"Austen", "Jean"}, {"Dickens", "Charles"}};
-  string search_item("Austen");  // author we'll be looking for
+  multimap<string, string> authors = {{"Joyce", "Ulysses"}, {"Austen", "Emma"}, {"Dickens", "Oliver Twist"}, {"Joyce", "Eveline"}};
+  string search_item("Joyce");  // author we'll be looking for
   
   auto entries = authors.count(search_item); // number of elements
   auto iter = authors.find(search_item); // first entry for this author
+  cout << entries << endl;
   
   // loop through the number of entries there are for this author
   while(entries){
