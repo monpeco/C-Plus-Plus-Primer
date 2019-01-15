@@ -26,8 +26,14 @@ private:
   void check(size_type i, const string &msg) const;
 };
 
+// StrBlob Constructors
+StrBlob::StrBlob() : data(make_shared<vector<string>>()) {}
+StrBlob::StrBlob(initializer_list<string> il) : 
+             data(make_shared<vector<string>>(il)) {}
+
 int main(){
   
 
   return 0;
 }
+
