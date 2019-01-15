@@ -36,5 +36,16 @@ int main(){
   int *pi5 = new int();         // value initialized to 0; *pi5 is 0
   
 
+  // when we provide an initializer inside parentheses, we can use `auto`
+  // to deduce the type of the object we want to allocate from that initializer.
+  // However, because the compiler uses the initializer's type to deduce the
+  // type to allocate, we can use `auto` only with a single initializer inside
+  // parentheses
+  
+  auto p1 = new auto(obj);    // p points to an object of the type of obj
+  auto p2 = new auto{a,b,c};  // error: must use parentheses for the initializer
+  
+  // The newly allocated object is initialized from the value of obj.
+
   return 0;
 }
