@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>
+#include <vector>
 
 using namespace std;
 
@@ -21,6 +22,19 @@ int main(){
   
   int *pi3 = new int(1024);   // object to which pi points has value 1024
   string *ps3 = new string(10, '9');
+
+
+  
+  // vector with ten elements with values from 0 to 9
+  vector<int> *pv = new vector<int>{0,1,2,3,4,5,6,7,8,9};
+  
+  // we can also value initialize a dynamically allocated object by
+  // following the type name with a pair of empty parentheses
+  string *ps4 = new string;     // default initialized to the empty string
+  string *ps5 = new string();   // value initialized to the empty string
+  int *pi4 = new int;           // default initialized; *pi1 is undefined
+  int *pi5 = new int();         // value initialized to 0; *pi5 is 0
+  
 
   return 0;
 }
