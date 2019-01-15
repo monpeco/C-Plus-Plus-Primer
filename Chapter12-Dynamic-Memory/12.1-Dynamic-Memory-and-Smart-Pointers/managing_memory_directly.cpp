@@ -42,10 +42,19 @@ int main(){
   // type to allocate, we can use `auto` only with a single initializer inside
   // parentheses
   
-  auto p1 = new auto(obj);    // p points to an object of the type of obj
-  auto p2 = new auto{a,b,c};  // error: must use parentheses for the initializer
+  // auto p1 = new auto(obj);    // p points to an object of the type of obj
+  // auto p2 = new auto{a,b,c};  // error: must use parentheses for the initializer
   
   // The newly allocated object is initialized from the value of obj.
+
+
+  // Dynamically Allocated const Objects
+  // it is legal to use `new` to allocate `const` objects:
+  // allocate and initialize a const int
+  const int *pci = new const int(1024);
+  
+  // allocate a default-initialized cont empty string
+  const string *pcs = new const string;
 
   return 0;
 }
