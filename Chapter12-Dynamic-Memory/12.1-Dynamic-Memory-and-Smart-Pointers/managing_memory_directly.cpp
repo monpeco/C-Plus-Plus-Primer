@@ -60,5 +60,12 @@ int main(){
   int *p1 = new int; // if allocation fails, new throws std::bad_alloc
   int  *p2  =  new  (nothrow)  int;  // if allocation fails,  new  returns  a  null pointer
 
+  // Freeing Dynamic Memory
+  delete pi1;      // p must point to a dynamically allocated object or be null
+
+  //  a const dynamic object is freed in the same way
+  const int *pci2 = new const int(1024);
+  delete pci2;  // ok: deletes a const object
+
   return 0;
 }
