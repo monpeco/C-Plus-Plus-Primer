@@ -14,5 +14,11 @@ int main(){
   process(p); // copying p increments its count; in process the reference count is 2
   int i = *p; // ok: reference count is 1
 
+
+  int  *x(new  int(1024));      //  dangerous:  x  is  a  plain  pointer,  not  a smart pointer
+  //process(x);                 // error: cannot convert int* to shared_ptr<int>
+  process(shared_ptr<int>(x));  // legal, but the memory will be deleted!
+  int j = *x;                   // undefined: x is a dangling pointer!
+
   return 0;
 }
