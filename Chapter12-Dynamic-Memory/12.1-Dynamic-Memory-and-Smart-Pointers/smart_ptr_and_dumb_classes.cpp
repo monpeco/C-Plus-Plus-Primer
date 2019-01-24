@@ -15,14 +15,20 @@ connection connect(destination*){    // open the connection
   return connection();
 };
 
-void disconnect(connection);         // close the given connection
+void disconnect(connection){         // close the given connection
+  cout << "disconnect" << endl; 
+};
+
+void end_connection(connection *p) { disconnect(*p); }
 
 void f(destination &d){
   // get a connection
   connection c = connect(&d);
+  shared_ptr<connection> p(&c, end_connection);
   // use the connection
-  // if we forget to call disconnect before exiting f, there will be no way to close c
+  // when f exits, even if by an exception, the connection will be properly closed
 }
+
 
 int main(){
   
