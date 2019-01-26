@@ -19,5 +19,8 @@ int main(){
   // transfer the ownershipt from p6 to p4
   p4.reset(p6.release());                // reset deletes the memory to which p4 had pointed
   
+  p4.release();            // Wrong: p4 wont free the memory and we've lost the pointer
+  auto p7 = p6.release();  // ok, but we must remember to delete p7
+  
   return 0;
 }
