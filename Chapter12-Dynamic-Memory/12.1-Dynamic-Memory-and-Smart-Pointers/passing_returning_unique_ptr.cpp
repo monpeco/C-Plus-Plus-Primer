@@ -15,13 +15,19 @@ unique_ptr<int> clone(int p){
   return unique_ptr<int>(new int(p));
 }
 
+unique_ptr<int> clone2(int p){
+  unique_ptr<int> ptr(new int(p));
+  return ptr;
+}
 
 int main(){
   
   unique_ptr<int> p(new int(42));
   unique_ptr<int> pclone = clone(8);
-  
   cout << "*pclone: " << *pclone << endl;
   
+  unique_ptr<int> pclone2 = clone2(15);
+  cout << "*pclone2: " << *pclone2 << endl;
+
   return 0;
 }
