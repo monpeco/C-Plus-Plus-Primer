@@ -5,6 +5,7 @@
 using namespace std;
 
 class StrBlob{
+  friend class StrBlobPtr;
 public:
   typedef vector<string>::size_type size_type;
   StrBlob();
