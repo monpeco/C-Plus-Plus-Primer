@@ -9,6 +9,9 @@ class StrBlobPtr{
 public:
   StrBlobPtr(): curr(0) {}
   StrBlobPtr(StrBlob &a, size_t sz = 0): wptr(a.data), curr(sz) { }
+  std::string& deref() const;
+  StrBlobPtr& incr();       // prefix version
+  
 private:
   weak_ptr<vector<string>> wptr;
   size_t curr;      // current position within the array
