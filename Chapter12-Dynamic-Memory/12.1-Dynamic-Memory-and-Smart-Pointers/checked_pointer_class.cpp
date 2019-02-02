@@ -13,6 +13,9 @@ public:
   StrBlobPtr& incr();       // prefix version
   
 private:
+  // check returns a shared_ptr to the vector if the check succeeds
+  shared_ptr<vector<string>> check(size_t, const string&) const;
+  // store a weak_ptr, which means the underlying vector might be destroyed
   weak_ptr<vector<string>> wptr;
   size_t curr;      // current position within the array
 };
