@@ -20,6 +20,17 @@ private:
   size_t curr;      // current position within the array
 };
 
+shared_ptr<vector<string>> StrBlobPtr::check(size_t i, const string &msg) const{
+  auto ret = wptr.lock();    // is the vector still around?
+  if(!ret){
+    throw runtime_error("Unbound StrBlobPtr");
+  }
+  if(i >= ret->size()){
+    throw out_of_range(msg);
+  }
+  return ret;
+}
+
 int main(){
 
 
