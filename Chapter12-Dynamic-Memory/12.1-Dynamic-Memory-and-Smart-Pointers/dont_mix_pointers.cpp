@@ -15,7 +15,9 @@ int main(){
   cout << "i: " << i << endl;
   
   int *x(new int(42));   // dangerous: x is a plain pointer, not a smart
-  process(x);            // error: cannot convert int* to shared_ptr<int>
+  //process(x);            // error: cannot convert int* to shared_ptr<int>
+  
+  process(shared_ptr<int>(x));  // legal, but the memory will be deleted!
   
   return 0;
 }
