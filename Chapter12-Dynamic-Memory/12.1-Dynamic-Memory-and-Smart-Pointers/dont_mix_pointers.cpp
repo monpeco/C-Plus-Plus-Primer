@@ -13,5 +13,9 @@ int main(){
   process(p);                         // copying p increments its count; in process the reference count is 2
   int i = *p;       // Ok: reference count is 1
   cout << "i: " << i << endl;
+  
+  int *x(new int(42));   // dangerous: x is a plain pointer, not a smart
+  process(x);            // error: cannot convert int* to shared_ptr<int>
+  
   return 0;
 }
