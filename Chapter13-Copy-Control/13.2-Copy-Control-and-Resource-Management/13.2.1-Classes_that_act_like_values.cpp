@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 class HasPtr {
 public:
@@ -16,6 +17,14 @@ private:
   std::string *ps;
   int i;
 };
+
+HasPtr& HasPtr::operator=(const HasPtr &rhs){
+    auto newp = new std::string(*rhs.ps);      // copy the underlying string
+    delete ps;        // free the old memory
+    ps = newp;        // copy data from rhs into this object
+    i = rhs.i;
+    return *this;     // return this object
+}
 
 int main(){
     
