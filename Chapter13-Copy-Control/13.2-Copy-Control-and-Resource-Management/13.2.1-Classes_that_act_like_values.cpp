@@ -26,6 +26,16 @@ HasPtr& HasPtr::operator=(const HasPtr &rhs){
     return *this;     // return this object
 }
 
+// WRONG way to write an assignment operator!
+//HasPtr& HasPtr::operator=(const HasPtr &rhs)
+//{
+//    delete ps;   // frees the string to which this object points
+//    // if rhs and *this are the same object, we're copying from deleted memory!
+//    ps = new string(*(rhs.ps));
+//    i = rhs.i;
+//    return *this;
+//}
+
 int main(){
     
     
