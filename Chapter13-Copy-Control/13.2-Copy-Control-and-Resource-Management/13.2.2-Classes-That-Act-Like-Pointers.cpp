@@ -17,6 +17,13 @@ private:
     std::size_t *use;   // member to keep track of how many objects share *ps
 };
 
+HasPtr::~HasPtr()
+{
+    if (--*use == 0) {    // if the reference count goes to 0
+        delete ps;        // delete the string
+        delete use;       // and the counter
+    }
+}
 
 
 int main(){
